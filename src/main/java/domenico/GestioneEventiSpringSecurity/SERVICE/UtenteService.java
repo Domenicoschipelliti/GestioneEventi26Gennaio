@@ -44,4 +44,8 @@ public class UtenteService {
         utenteDao.delete(utenteCancellato);
     }
 
+    public Utente cercaEmail(String email) throws IdNonTRovato {
+        return utenteDao.cercaEmail(email).orElseThrow(() -> new IdNonTRovato("Utente con email " + email + " non trovata!"));
+    }
+
 }
