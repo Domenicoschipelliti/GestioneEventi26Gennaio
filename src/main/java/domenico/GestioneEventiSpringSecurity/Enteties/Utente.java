@@ -23,9 +23,10 @@ public class Utente implements UserDetails {
     private String cognome;
     private String email;
     private String password;
+    @Enumerated(EnumType.STRING)
     private RUOLI ruolo;
 
-    @OneToMany(mappedBy = "utenteId")
+    @OneToMany(mappedBy = "utente")
     private List<Eventi> eventi;
 
 

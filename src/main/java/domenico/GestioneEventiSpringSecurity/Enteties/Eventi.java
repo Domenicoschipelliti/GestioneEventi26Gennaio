@@ -11,6 +11,7 @@ import java.util.UUID;
 @Entity
 @Getter
 @ToString
+@Table(name = "utente_id")
 public class Eventi {
     @Id
     @GeneratedValue

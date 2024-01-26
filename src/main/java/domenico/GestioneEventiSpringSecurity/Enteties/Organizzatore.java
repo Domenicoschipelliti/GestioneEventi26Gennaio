@@ -23,10 +23,11 @@ public class Organizzatore implements UserDetails {
     private String cognome;
     private String email;
     private String password;
+    @Enumerated(EnumType.STRING)
     private RUOLI ruolo;
 
     @ManyToMany
-    @JoinTable(name = "eventi_organizzati",joinColumns=@JoinColumn( name = "organizzatoreId"),inverseJoinColumns = @JoinColumn(name = "eventiId"))
+    @JoinTable(name = "eventi_organizzati",joinColumns=@JoinColumn( name = "organizzatoreId"),inverseJoinColumns = @JoinColumn(name = "eventoId"))
     private List<Eventi> eventiGestiti;
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
